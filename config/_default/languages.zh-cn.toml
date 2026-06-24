@@ -22,3 +22,27 @@ title = "KingHH Blog"
     { email = "mailto:kinghh826@gmail.com" },
     { github = "https://github.com/kinghh-dev" }
   ]
+
+[params.article]
+  showDate = true
+  showAuthor = true
+  showReadingTime = true
+  showWordCount = true
+  showTableOfContents = true
+  showHeadingAnchors = true
+  showPagination = true
+  showTaxonomies = true
+  showCategories = true
+  showTags = true
+  showHero = true
+  heroStyle = "big"
+  sharingLinks = ["email"]
+  showComments = true
+
+[params.comments]
+  provider = "waline"
+
+[params.comments.waline]
+  serverURL = "https://kinghh.cn/waline"
+  lang = "zh-CN"
+  pageSize = 10
