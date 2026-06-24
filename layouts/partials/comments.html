@@ -1,8 +1,9 @@
 {{- $comments := site.Params.comments -}}
 {{- $waline := $comments.waline -}}
 {{- $enabled := .Params.comments | default true -}}
+{{- $serverURL := $waline.serverurl | default $waline.serverURL -}}
 
-{{- if and $enabled $comments (eq $comments.provider "waline") $waline.serverURL -}}
+{{- if and $enabled $comments (eq $comments.provider "waline") $serverURL -}}
   <div class="not-prose">
     <div id="waline" class="waline-container"></div>
   </div>
@@ -13,7 +14,7 @@
 
     init({
       el: '#waline',
-      serverURL: '{{ $waline.serverURL }}',
+      serverURL: '{{ $serverURL }}',
       path: '{{ .RelPermalink }}',
       lang: '{{ $waline.lang | default "zh-CN" }}',
       login: 'disable',
