@@ -9,15 +9,15 @@ title = "KingHH Blog"
   isoCode = "zh-cn"
   rtl = false
   dateFormat = "2006-01-02"
-  description = "记录技术栈、工程实践和长期思考。"
+  description = "记录 AI 浪潮下的技术探索、工程实践和长期思考。"
   copyright = "© 2026 KingHH. Built with Hugo and Blowfish."
 
 [params.author]
   name = "kinghh"
   image = "avatar-kinghh.png"
   imageQuality = 96
-  headline = "Java / Web / VPS 部署 / 个人项目"
-  bio = "个人技术博客作者，关注 Java、Web、VPS 部署和长期项目沉淀。"
+  headline = "Java / Web / VPS 部署 / AI 工具实践"
+  bio = "老手艺人码农在 AI 浪潮下的自我探索：从相信代码改变世界，到相信 AI 改变世界。"
   links = [
     { email = "mailto:kinghh826@gmail.com" },
     { github = "https://github.com/kinghh-dev" }
