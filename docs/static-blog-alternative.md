@@ -1,20 +1,21 @@
-# Hugo Static Blog Deployment
+# Hugo 静态博客部署说明
 
-This project now uses Hugo and the Blowfish theme.
+当前项目使用 Hugo 和 Blowfish 主题构建静态博客。
 
-## Structure
+## 目录结构
 
 ```text
-config/_default/      Hugo and Blowfish configuration
-content/              Markdown pages and posts
-assets/               Source assets used by Hugo
-themes/blowfish/      Vendored Blowfish theme
-public/               Generated site, ignored by Git
+config/_default/      Hugo 和 Blowfish 配置
+content/              Markdown 页面和文章
+assets/               Hugo 处理的源资源
+static/               原样复制到站点的静态资源
+themes/blowfish/      当前使用的 Blowfish 主题
+public/               构建结果，不提交到 Git
 ```
 
-## Write A Post
+## 写文章
 
-Create a Markdown file under `content/posts/`:
+在 `content/posts/` 下创建 Markdown 文件：
 
 ```markdown
 ---
@@ -28,23 +29,23 @@ categories: ["技术栈"]
 正文内容。
 ```
 
-## Build
+## 构建
 
-Install Hugo Extended `0.161.1`, then run:
+安装 Hugo Extended `0.161.1` 后执行：
 
 ```bash
 hugo --gc --minify
 ```
 
-The generated files are placed in:
+生成文件会放到：
 
 ```text
 public/
 ```
 
-## Deploy
+## 部署
 
-Upload the repository or the generated `public/` directory to the VPS. The deploy script expects `public/` by default:
+自动部署推荐走 Jenkins。手动部署时，先确保 VPS 上有仓库代码或已经上传了 `public/` 目录，然后执行：
 
 ```bash
 cd /root/kinghh-web
@@ -53,32 +54,32 @@ export BLOG_WWW_DOMAIN="www.kinghh.cn"
 sudo -E bash deploy/scripts/deploy-static-ubuntu.sh
 ```
 
-The deployed site root is:
+线上站点目录是：
 
 ```text
 /var/www/kinghh-blog
 ```
 
-HTTPS is handled by Certbot:
+HTTPS 由 Certbot 管理：
 
 ```bash
 sudo certbot --nginx -d kinghh.cn -d www.kinghh.cn
 ```
 
-## Compared With WordPress
+## 和 WordPress 的取舍
 
-Hugo advantages:
+Hugo 的优点：
 
-- Fast static pages.
-- No database.
-- Markdown writing workflow.
-- Built-in RSS, taxonomy pages, generated indexes, and search JSON.
-- Lower security and maintenance burden.
+- 静态页面访问速度快。
+- 不需要数据库。
+- 文章使用 Markdown 管理，适合开发者。
+- RSS、分类、标签、搜索索引都可以构建生成。
+- 维护成本和安全风险更低。
 
-Hugo tradeoffs:
+Hugo 的限制：
 
-- No browser-based admin backend.
-- Publishing requires a build step.
-- Comments require an external or self-hosted service.
+- 没有浏览器后台。
+- 发布前需要构建。
+- 评论需要外部服务或自建服务。
 
-Use Hugo while the site is mainly a personal writing system. Move to WordPress only if browser-based editing becomes more important than simplicity.
+当前博客主要是个人写作和技术记录，因此 Hugo 更合适。只有当“浏览器后台写作”比“简单稳定”更重要时，再考虑 WordPress。
