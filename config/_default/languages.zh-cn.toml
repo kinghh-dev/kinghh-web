@@ -1,0 +1,21 @@
+disabled = false
+locale = "zh-CN"
+label = "简体中文"
+weight = 1
+title = "KingHH Blog"
+
+[params]
+  displayName = "ZH"
+  isoCode = "zh-cn"
+  rtl = false
+  dateFormat = "2006-01-02"
+  description = "记录技术栈、工程实践和长期思考。"
+  copyright = "© 2026 KingHH. Built with Hugo and Blowfish."
+
+[params.author]
+  name = "KingHH"
+  headline = "Java / Web / VPS 部署 / 个人项目"
+  bio = "这里预留给正式个人介绍。后续可以补充职业方向、项目经历、联系方式和正在学习的内容。"
+  links = [
+    { github = "https://github.com/kinghh-dev" }
+  ]

@@ -5,7 +5,7 @@ set -euo pipefail
 
 SITE_ROOT="${SITE_ROOT:-/var/www/kinghh-blog}"
 BLOG_WWW_DOMAIN="${BLOG_WWW_DOMAIN:-}"
-SOURCE_DIR="${SOURCE_DIR:-site}"
+SOURCE_DIR="${SOURCE_DIR:-public}"
 SERVER_NAMES="$BLOG_DOMAIN"
 
 if [ -n "$BLOG_WWW_DOMAIN" ]; then
@@ -63,6 +63,14 @@ ln -sfn /etc/nginx/sites-available/kinghh-blog /etc/nginx/sites-enabled/kinghh-b
 rm -f /etc/nginx/sites-enabled/default
 nginx -t
 systemctl reload nginx
+
+if [ -d "/etc/letsencrypt/live/${BLOG_DOMAIN}" ]; then
+  certbot_args=(--nginx -d "${BLOG_DOMAIN}" --non-interactive --agree-tos --register-unsafely-without-email --redirect)
+  if [ -n "$BLOG_WWW_DOMAIN" ]; then
+    certbot_args+=(-d "$BLOG_WWW_DOMAIN")
+  fi
+  certbot "${certbot_args[@]}"
+fi
 
 echo "Static blog deployed to ${SITE_ROOT}."
 echo "Open http://${BLOG_DOMAIN} to verify it."

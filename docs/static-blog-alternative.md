@@ -1,28 +1,56 @@
-# Static Blog Deployment
+# Hugo Static Blog Deployment
 
-Use this route if you want the fastest pages and do not need a browser-based writing backend. This repository already includes a directly deployable static blog in `site/`.
+This project now uses Hugo and the Blowfish theme.
 
-## Direct Deployment
+## Structure
 
-Upload this project to the VPS:
-
-```bash
-scp -r . root@1.2.3.4:/root/kinghh-web
+```text
+config/_default/      Hugo and Blowfish configuration
+content/              Markdown pages and posts
+assets/               Source assets used by Hugo
+themes/blowfish/      Vendored Blowfish theme
+public/               Generated site, ignored by Git
 ```
 
-Run on the VPS:
+## Write A Post
+
+Create a Markdown file under `content/posts/`:
+
+```markdown
+---
+title: "文章标题"
+date: 2026-06-24
+description: "文章摘要。"
+tags: ["hugo", "blogging"]
+categories: ["技术栈"]
+---
+
+正文内容。
+```
+
+## Build
+
+Install Hugo Extended `0.161.1`, then run:
+
+```bash
+hugo --gc --minify
+```
+
+The generated files are placed in:
+
+```text
+public/
+```
+
+## Deploy
+
+Upload the repository or the generated `public/` directory to the VPS. The deploy script expects `public/` by default:
 
 ```bash
 cd /root/kinghh-web
-export BLOG_DOMAIN="example.com"
-export BLOG_WWW_DOMAIN="www.example.com"
+export BLOG_DOMAIN="kinghh.cn"
+export BLOG_WWW_DOMAIN="www.kinghh.cn"
 sudo -E bash deploy/scripts/deploy-static-ubuntu.sh
-```
-
-Then request HTTPS:
-
-```bash
-sudo certbot --nginx -d example.com -d www.example.com
 ```
 
 The deployed site root is:
@@ -31,129 +59,26 @@ The deployed site root is:
 /var/www/kinghh-blog
 ```
 
-The included pages are:
-
-- `site/index.html`
-- `site/about.html`
-- `site/posts/hello-world.html`
-- `site/styles.css`
-
-To publish another article, copy `site/posts/hello-world.html`, change the title/content, and add a link to it from `site/index.html`.
-
-## Static Generators Later
-
-After you have more posts, you can migrate this static site to a generator.
-
-Recommended options:
-
-- Hugo: best for a pure blog and very fast builds.
-- Astro: better if you want a modern frontend and custom pages later.
-
-## How Writing Works
-
-Posts are usually Markdown files committed to the project.
-
-Example Hugo post:
-
-```markdown
----
-title: "First Post"
-date: 2026-06-23
-draft: false
----
-
-This is my first blog post.
-```
-
-## Hugo Flow
-
-Create a post:
+HTTPS is handled by Certbot:
 
 ```bash
-hugo new posts/first-post.md
-```
-
-Build:
-
-```bash
-hugo
-```
-
-Generated files are placed in:
-
-```text
-public/
-```
-
-Deploy `public/` to:
-
-```text
-/var/www/blog
-```
-
-## Astro Flow
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Build:
-
-```bash
-npm run build
-```
-
-Generated files are placed in:
-
-```text
-dist/
-```
-
-Deploy `dist/` to:
-
-```text
-/var/www/blog
-```
-
-## Minimal Static Nginx Config
-
-```nginx
-server {
-    listen 80;
-    server_name example.com www.example.com;
-
-    root /var/www/blog;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
-
-HTTPS is still handled by Certbot:
-
-```bash
-sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d kinghh.cn -d www.kinghh.cn
 ```
 
 ## Compared With WordPress
 
-Static blog advantages:
+Hugo advantages:
 
-- Fastest response time.
+- Fast static pages.
 - No database.
-- Smaller attack surface.
-- Low VPS resource usage.
-- Easy file-based backup.
+- Markdown writing workflow.
+- Built-in RSS, taxonomy pages, generated indexes, and search JSON.
+- Lower security and maintenance burden.
 
-Static blog tradeoffs:
+Hugo tradeoffs:
 
-- No built-in admin backend.
-- Writing usually happens in Markdown.
-- Publishing requires build and deploy steps.
-- Comments, search, and image management need extra work.
+- No browser-based admin backend.
+- Publishing requires a build step.
+- Comments require an external or self-hosted service.
 
-Use WordPress if you want the fastest writing workflow. Use Hugo or Astro if you want the lightest site.
+Use Hugo while the site is mainly a personal writing system. Move to WordPress only if browser-based editing becomes more important than simplicity.

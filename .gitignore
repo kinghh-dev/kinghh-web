@@ -2,6 +2,9 @@
 *.iml
 .tools/
 *.zip
+public/
+resources/
+.hugo_build.lock
 
 # Local notes and secrets
 .env
