@@ -3,8 +3,8 @@ title: "KingHH Blog"
 description: "kinghh 的个人技术博客，记录 AI 浪潮下的技术探索、Java、Web、VPS 部署和个人项目实践。"
 ---
 
-<div class="not-prose flex flex-col gap-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 sm:flex-row sm:items-center">
-  <img src="/images/avatar-kinghh.png" alt="kinghh 的头像" class="h-28 w-28 rounded-full object-cover shadow-md" />
+<div class="not-prose flex flex-col gap-4 rounded-xl border border-neutral-200 bg-neutral-50 p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 sm:flex-row sm:items-center">
+  <img src="/images/avatar-profile-20260624.png" alt="kinghh 的头像" class="h-16 w-16 rounded-full object-cover shadow-sm" />
   <div>
     <div class="text-2xl font-bold text-neutral-900 dark:text-neutral">kinghh</div>
     <div class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Java / Web / VPS 部署 / 个人项目 / AI 工具实践</div>

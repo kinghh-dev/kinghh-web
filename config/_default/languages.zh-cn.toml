@@ -14,7 +14,7 @@ title = "KingHH Blog"
 
 [params.author]
   name = "kinghh"
-  image = "avatar-kinghh.png"
+  image = "avatar-profile-20260624.png"
   imageQuality = 96
   headline = "Java / Web / VPS 部署 / AI 工具实践"
   bio = "老手艺人码农在 AI 浪潮下的自我探索：从相信代码改变世界，到相信 AI 改变世界。"
