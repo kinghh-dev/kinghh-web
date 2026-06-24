@@ -1,5 +1,5 @@
 baseURL = "https://kinghh.cn/"
-title = "KingHH Blog"
+title = "首页"
 theme = "blowfish"
 defaultContentLanguage = "zh-cn"
 enableRobotsTXT = true
