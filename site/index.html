@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KingHH Blog</title>
+    <meta name="description" content="KingHH 的个人博客，记录技术栈、工程实践和长期思考。">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">KingHH</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/">首页</a>
+        <a href="/posts/tech-stack.html">技术栈</a>
+        <a href="/about.html">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal Technology Blog</p>
+          <h1>用简单系统，持续记录技术与思考。</h1>
+          <p class="lead">
+            这里会沉淀 Java、Web、服务器部署、前端页面和个人成长相关内容。第一版保持轻量，先把写作和发布节奏跑起来。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="/posts/tech-stack.html">查看技术栈</a>
+            <a class="button ghost" href="/about.html">预留个人介绍</a>
+          </div>
+        </div>
+        <figure class="hero-visual">
+          <img src="/assets/hero-tech.png" alt="深色科技工作台与发光数据界面">
+        </figure>
+      </section>
+
+      <section class="feature-band" aria-labelledby="focus-title">
+        <div class="section-heading">
+          <p class="eyebrow">Focus</p>
+          <h2 id="focus-title">当前博客方向</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>工程实践</h3>
+            <p>记录从本地开发到 VPS 部署的完整过程，保留能复用的脚本和配置。</p>
+          </article>
+          <article class="feature-card">
+            <span>02</span>
+            <h3>技术栈演进</h3>
+            <p>先从静态博客开始，后续按需要扩展 WordPress、Astro、Hugo 或 Java 平台。</p>
+          </article>
+          <article class="feature-card">
+            <span>03</span>
+            <h3>长期写作</h3>
+            <p>页面不追求复杂功能，优先保证加载速度、阅读体验和维护成本。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="post-list" aria-labelledby="latest-posts">
+        <div class="section-heading inline">
+          <div>
+            <p class="eyebrow">Writing</p>
+            <h2 id="latest-posts">最新文章</h2>
+          </div>
+          <span>2 篇</span>
+        </div>
+
+        <article class="post-item featured">
+          <time datetime="2026-06-24">2026-06-24</time>
+          <h3><a href="/posts/tech-stack.html">我的博客技术栈：从静态页面开始</a></h3>
+          <p>介绍当前博客使用的 Nginx、静态页面、VPS、域名和 HTTPS 方案，以及后续可扩展方向。</p>
+        </article>
+
+        <article class="post-item">
+          <time datetime="2026-06-23">2026-06-23</time>
+          <h3><a href="/posts/hello-world.html">第一篇文章：博客上线</a></h3>
+          <p>从一个最小可用的静态页面开始，把写作和发布流程先跑通。</p>
+        </article>
+      </section>
+
+      <section class="profile-placeholder" aria-labelledby="profile-title">
+        <p class="eyebrow">Profile</p>
+        <h2 id="profile-title">个人介绍预留区</h2>
+        <p>
+          这里后续可以放头像、姓名、职业方向、联系方式、GitHub 链接、项目经历和正在学习的内容。当前先保留位置，等内容稳定后再补全。
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 KingHH. Built with Nginx and static HTML.</p>
+    </footer>
+  </body>
+</html>

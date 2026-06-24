@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>第一篇文章：博客上线 - KingHH Blog</title>
+    <meta name="description" content="从一个最小可用的静态页面开始，把写作和发布流程先跑通。">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">KingHH</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/">首页</a>
+        <a href="/posts/tech-stack.html">技术栈</a>
+        <a href="/about.html">关于</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article class="article">
+        <p class="eyebrow">2026-06-23</p>
+        <h1>第一篇文章：博客上线</h1>
+        <p class="lead">
+          这是一篇示例文章。它的作用是验证页面样式、文章排版和 VPS 静态部署流程。
+        </p>
+        <p>
+          第一版博客不需要复杂系统。把首页、文章页、关于页和部署流程跑通之后，就可以开始持续写内容。
+        </p>
+        <h2>当前方案</h2>
+        <p>
+          这个版本使用纯静态文件，由 Nginx 直接返回页面，不需要数据库、PHP 或后台服务。它的资源占用低，迁移和备份也很简单。
+        </p>
+        <h2>后续扩展</h2>
+        <p>
+          如果文章数量增加，可以切换到 Hugo 或 Astro 来生成页面；如果更需要后台写作体验，可以部署 WordPress。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 KingHH. Built with Nginx and static HTML.</p>
+    </footer>
+  </body>
+</html>

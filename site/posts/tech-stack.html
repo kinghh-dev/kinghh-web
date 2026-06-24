@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的博客技术栈：从静态页面开始 - KingHH Blog</title>
+    <meta name="description" content="介绍 KingHH Blog 当前使用的技术栈：VPS、Nginx、静态 HTML、CSS、域名与 HTTPS。">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">KingHH</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/">首页</a>
+        <a href="/posts/tech-stack.html">技术栈</a>
+        <a href="/about.html">关于</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article class="article">
+        <p class="eyebrow">2026-06-24</p>
+        <h1>我的博客技术栈：从静态页面开始</h1>
+        <p class="lead">
+          这个博客的第一版没有选择复杂平台，而是先用最稳定、最容易维护的方式上线：静态页面 + Nginx + VPS。
+        </p>
+
+        <h2>当前使用的技术栈</h2>
+        <p>
+          服务器使用 Ubuntu，Web 服务使用 Nginx，页面由 HTML 和 CSS 编写，静态文件部署在 VPS 的 `/var/www/kinghh-blog` 目录。用户访问域名后，请求会先到 VPS，再由 Nginx 直接返回页面。
+        </p>
+        <div class="tech-list">
+          <div>
+            <strong>Ubuntu VPS</strong>
+            <span>承载站点服务，便于后续扩展后台、数据库或自动化部署。</span>
+          </div>
+          <div>
+            <strong>Nginx</strong>
+            <span>负责接收 HTTP/HTTPS 请求，并直接返回静态页面。</span>
+          </div>
+          <div>
+            <strong>HTML + CSS</strong>
+            <span>减少依赖，提升可控性和加载速度。</span>
+          </div>
+          <div>
+            <strong>域名 + HTTPS</strong>
+            <span>通过域名访问博客，后续使用 Let’s Encrypt 提供证书。</span>
+          </div>
+        </div>
+
+        <h2>为什么第一版选择静态页面</h2>
+        <p>
+          静态页面没有数据库，也不依赖后端运行时。对个人博客来说，这意味着更低的资源占用、更少的安全风险和更简单的备份方式。只要页面文件还在，站点就能很容易恢复。
+        </p>
+
+        <h2>后续怎么扩展</h2>
+        <p>
+          如果文章数量变多，可以迁移到 Hugo 或 Astro，用 Markdown 管理文章并自动生成页面。如果更需要后台写作体验，可以部署 WordPress。如果想练 Java，也可以在内容稳定后再做 Spring Boot + MySQL + Vue 的完整平台。
+        </p>
+
+        <h2>阶段目标</h2>
+        <p>
+          当前最重要的是先稳定上线、持续写内容、保持页面清爽。技术方案会跟着真实需求演进，而不是一开始就做成复杂系统。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 KingHH. Built with Nginx and static HTML.</p>
+    </footer>
+  </body>
+</html>

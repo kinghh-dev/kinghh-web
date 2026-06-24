@@ -1,0 +1,12 @@
+.idea/
+*.iml
+.tools/
+*.zip
+
+# Local notes and secrets
+.env
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
