@@ -43,6 +43,15 @@ defaultFeaturedImage = "hero-tech.png"
   showHero = true
   heroStyle = "big"
   sharingLinks = ["email"]
+  showComments = true
+
+[comments]
+  provider = "waline"
+
+[comments.waline]
+  serverURL = "https://kinghh.cn/waline"
+  lang = "zh-CN"
+  pageSize = 10
 
 [list]
   showSummary = true

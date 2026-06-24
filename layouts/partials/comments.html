@@ -1,0 +1,27 @@
+{{- $comments := site.Params.comments -}}
+{{- $waline := $comments.waline -}}
+{{- $enabled := .Params.comments | default true -}}
+
+{{- if and $enabled $comments (eq $comments.provider "waline") $waline.serverURL -}}
+  <div class="not-prose">
+    <div id="waline" class="waline-container"></div>
+  </div>
+
+  <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    init({
+      el: '#waline',
+      serverURL: '{{ $waline.serverURL }}',
+      path: '{{ .RelPermalink }}',
+      lang: '{{ $waline.lang | default "zh-CN" }}',
+      login: 'disable',
+      meta: ['nick', 'mail', 'link'],
+      requiredMeta: ['nick', 'mail'],
+      pageSize: {{ $waline.pageSize | default 10 }},
+      imageUploader: false,
+      dark: 'html.dark'
+    });
+  </script>
+{{- end -}}
