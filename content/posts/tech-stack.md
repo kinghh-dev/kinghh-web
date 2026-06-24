@@ -4,9 +4,12 @@ date: 2026-06-24
 description: "介绍 KingHH Blog 当前使用的技术栈：Hugo、Blowfish、VPS、Nginx、域名与 HTTPS。"
 tags: ["hugo", "nginx", "vps", "blogging"]
 categories: ["技术栈"]
+featureimage: "tech-stack-feature.png"
 aliases:
   - /posts/tech-stack.html
 ---
+
+![Hugo、Blowfish、Nginx、VPS 与 HTTPS 组成的博客技术栈](/images/tech-stack-feature.png)
 
 这个博客的第一版没有选择复杂平台，而是先用最稳定、最容易维护的方式上线：静态页面 + Nginx + VPS。
 

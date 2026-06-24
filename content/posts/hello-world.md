@@ -4,9 +4,12 @@ date: 2026-06-23
 description: "从一个最小可用的静态页面开始，把写作和发布流程先跑通。"
 tags: ["blogging", "deployment"]
 categories: ["博客"]
+featureimage: "hello-world-feature.png"
 aliases:
   - /posts/hello-world.html
 ---
+
+![VPS 部署与博客上线流程](/images/hello-world-feature.png)
 
 这是一篇示例文章。它的作用是验证页面样式、文章排版和 VPS 静态部署流程。
 
