@@ -1,9 +1,9 @@
 {{- $comments := site.Params.comments -}}
 {{- $waline := $comments.waline -}}
 {{- $enabled := .Params.comments | default true -}}
-{{- $serverURL := $waline.serverurl | default $waline.serverURL -}}
+{{- $serverURL := $waline.serverurl | default ($waline.serverURL | default "https://kinghh.cn/waline") -}}
 
-{{- if and $enabled $comments (eq $comments.provider "waline") $serverURL -}}
+{{- if and $enabled $serverURL -}}
   <div class="not-prose">
     <div id="waline" class="waline-container"></div>
   </div>
