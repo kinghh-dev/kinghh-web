@@ -73,6 +73,7 @@ Nginx and HTTPS config:
 
 - [deploy/nginx/static-blog.conf](deploy/nginx/static-blog.conf)
 - [deploy/scripts/deploy-static-ubuntu.sh](deploy/scripts/deploy-static-ubuntu.sh)
+- [docs/jenkins-deploy.md](docs/jenkins-deploy.md)
 
 ## Existing Content
 

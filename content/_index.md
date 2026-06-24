@@ -1,5 +1,5 @@
 ---
-title: "KingHH Blog"
+title: "首页"
 description: "kinghh 的个人技术博客，记录 AI 浪潮下的技术探索、Java、Web、VPS 部署和个人项目实践。"
 ---
 
