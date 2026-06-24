@@ -9,8 +9,6 @@ aliases:
   - /about.html
 ---
 
-![kinghh 的头像](/images/avatar-kinghh.png)
-
 ## 个人简介
 
 欢迎大家进入我的博客，我是 **kinghh**。
@@ -34,3 +32,5 @@ aliases:
 ## 后续计划
 
 第一阶段先保证页面可访问、内容可更新、部署可复用。后面会逐步加入分类、标签、RSS、站内搜索、评论系统和自动化发布流程，也会继续补充 AI 工具实践和个人项目复盘。
+
+{{< button href="/" >}}返回首页{{< /button >}}
