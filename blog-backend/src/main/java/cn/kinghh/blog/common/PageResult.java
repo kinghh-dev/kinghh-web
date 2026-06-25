@@ -1,0 +1,6 @@
+package cn.kinghh.blog.common;
+
+import java.util.List;
+
+public record PageResult<T>(long page, long size, long total, List<T> records) {
+}

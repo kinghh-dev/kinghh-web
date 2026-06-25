@@ -1,0 +1,57 @@
+pipeline {
+  agent any
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
+    disableConcurrentBuilds()
+    timestamps()
+  }
+
+  triggers {
+    pollSCM('H/3 * * * *')
+  }
+
+  environment {
+    BLOG_HOME = '/opt/blog'
+    BACKEND_PORT = '18080'
+    NODE_OPTIONS = '--max-old-space-size=512'
+    MAVEN_OPTS = '-Xmx512m'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build Frontend') {
+      steps {
+        sh 'cd blog-frontend && npm ci && npm run build'
+      }
+    }
+
+    stage('Build Backend') {
+      steps {
+        sh 'cd blog-backend && ./mvnw -q -DskipTests package || mvn -q -DskipTests package'
+      }
+    }
+
+    stage('Deploy') {
+      when {
+        expression {
+          return env.BRANCH_NAME == null || env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master'
+        }
+      }
+      steps {
+        sh 'bash deploy/blog/scripts/deploy.sh'
+      }
+    }
+  }
+
+  post {
+    success {
+      echo "KingHH dynamic blog deployed to ${env.BLOG_HOME}"
+    }
+  }
+}

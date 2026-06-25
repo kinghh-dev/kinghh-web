@@ -5,6 +5,9 @@
 public/
 resources/
 .hugo_build.lock
+blog-frontend/node_modules/
+blog-frontend/dist/
+blog-backend/target/
 
 # Local notes and secrets
 .env
