@@ -1,0 +1,57 @@
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+enableA11y = true
+disableImageOptimization = false
+disableTextInHeader = false
+fingerprintAlgorithm = "sha512"
+defaultFeaturedImage = "hero-tech.png"
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "page"
+  homepageImage = "hero-tech.png"
+  showRecent = true
+  showRecentItems = 8
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = false
+
+[article]
+  showDate = true
+  showAuthor = true
+  showReadingTime = true
+  showWordCount = true
+  showTableOfContents = true
+  showHeadingAnchors = true
+  showPagination = true
+  showTaxonomies = true
+  showCategories = true
+  showTags = true
+  showHero = true
+  heroStyle = "big"
+  sharingLinks = ["email"]
+
+[list]
+  showSummary = true
+  groupByYear = true
+  showCards = false
+  showTableOfContents = false
+
+[taxonomy]
+  showTermCount = true
+
+[term]
+  groupByYear = true
