@@ -2,8 +2,8 @@
 *.iml
 .tools/
 *.zip
-public/
-resources/
+/public/
+/resources/
 .hugo_build.lock
 blog-frontend/node_modules/
 blog-frontend/dist/
