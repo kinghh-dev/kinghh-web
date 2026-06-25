@@ -78,14 +78,14 @@ public interface ArticleMapper extends BaseMapper<Article> {
 
   @Select("""
       select id from article
-      where deleted = 0 and status = 'PUBLISHED' and published_at &lt; (select published_at from article where id = #{id})
+      where deleted = 0 and status = 'PUBLISHED' and published_at < (select published_at from article where id = #{id})
       order by published_at desc limit 1
       """)
   Long selectPreviousId(@Param("id") Long id);
 
   @Select("""
       select id from article
-      where deleted = 0 and status = 'PUBLISHED' and published_at &gt; (select published_at from article where id = #{id})
+      where deleted = 0 and status = 'PUBLISHED' and published_at > (select published_at from article where id = #{id})
       order by published_at asc limit 1
       """)
   Long selectNextId(@Param("id") Long id);
